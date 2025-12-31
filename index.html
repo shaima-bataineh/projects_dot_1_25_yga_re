@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Template</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    
+    <div class="logo">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <span>Healthy Life</span>  
+    </div>
+
+    <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="btn btn--primary" href="#contact">Get Started</a>
+</header>
+
+<main>
+    <section class="hero" id="about">
+        <div class="container hero__grid">
+            <div class="hero__content">
+                <h1 class="hero__title">Live a Healthier Life</h1>
+                <p class="hero__desc">
+                    We offer simple solutions to improve your daily lifestyle.
+                </p>
+
+                <div class="hero__actions">
+                    <a class="btn btn--light" href="#features">Our Services</a>
+                    <a class="btn btn--ghost" href="#contact">Book Consultation</a>
+                </div>
+            </div>
+
+            <div class="hero__card">
+                <h3>Why Healthy Life?</h3>
+                <ul class="list">
+                    <li>Personalized health tips</li>
+                    <li>Daily wellness guidance</li>
+                    <li>Trusted experts</li>
+                    <li>Simple healthy routines</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-head">
+                <h2>Features</h2>
+                <p> Daily wellness made easy</p>
+            </div>
+
+            <div class="features__grid">
+                <article class="card">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <h3>Healthy Routine</h3>
+                    <p>Daily plans to help you live healthier.</p>
+                </article>
+                <article class="card">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h3>New healthy habits</h3>
+                    <p>We help in acquiring new healthy habits</p>
+                </article>
+                <article class="card">
+                    <i class="fa-solid fa-apple-whole"></i>
+                    <h3>Healthy Nutrition</h3>
+                    <p>Simple food choices that fuel your body and boost energy</p>
+                </article>
+                <article class="card">
+                    <i class="fa-solid fa-brain"></i>
+                    <h3>Mental Wellness</h3>
+                    <p>Care for your mind, reduce stress, and feel more balanced</p>
+                </article>
+                <article class="card">
+                    <i class="fa-solid fa-person-running"></i>
+                    <h3>Stay Active</h3>
+                    <p>Easy movement for a stronger, healthier body.</p>
+                </article>
+                <article class="card">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Wellness Tips</h3>
+                    <p>Smart tips to improve your health, boost energy.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container cta__box">
+            <div>
+                <h2>Start Your Healthy Journey Today</h2>
+                <p> Small changes make a big difference..</p>
+            </div>
+            <a class="btn btn--primary" href="#">Start Your Journey</a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer__grid">
+        <div>
+            <div class="logo logo--footer">Healthy Life</div>
+            <p class="muted">We help you build a healthy and sustainable lifestyle.</p>
+        </div>
+
+        <div class="footer__links">
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer__copy muted">
+            © <span id="y"></span> Healthy Life. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
