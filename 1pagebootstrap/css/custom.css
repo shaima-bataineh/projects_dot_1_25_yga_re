@@ -23,14 +23,23 @@ body{
     background-color:#f2f8f2;   
 }
 
+.navbar .form-control {
+  border-radius: 20px;
+}
+
+.navbar .btn {
+  border-radius: 20px;
+}
+
 .custom-card{
-    border: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
 }
 .custom-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 .custom-btn{
     border-radius: 20px;
