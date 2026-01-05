@@ -1,4 +1,6 @@
-/* DESIGN SYSTEM*/
+/* =====================
+   DESIGN SYSTEM
+===================== */
 
 :root {
   --primary: #31694E;
@@ -22,18 +24,27 @@ body {
 a {
   text-decoration: none;
 }
+
+#welcomeMessage {
+  font-size: 20px;
+  color: #4fa6a6;
+  margin: 20px 0;
+}
+
+
 .custom-navbar {
-  background-color: #fff; 
-  box-shadow: 0 3px 15px rgba(0,0,0,0.05); 
+  background-color: #fff; /* خلفية بيضاء بدل اللون الافتراضي */
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05); /* Shadow خفيف يعطي depth */
   padding: 1rem 0;
 }
 .custom-navbar .navbar-brand {
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--primary);}
+  color: var(--primary); /* لون رئيسي */
+}
 
 .custom-navbar .navbar-brand span {
-  color: var(--accent); 
+  color: var(--accent); /* لون مميز لجزء من اللوجو */
 }
 
 .custom-navbar .nav-link.active  {
@@ -41,7 +52,10 @@ a {
   margin-right: 1rem;
   font-weight: 500;
   transition: color 0.3s;
+
 }
+
+
 .custom-navbar .nav-link.active {
   color: var(--primary);
   font-weight: 600;
@@ -117,7 +131,7 @@ a {
 .features-section .text-center h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #31694E; 
+  color: #31694E; /* نفس اللون الأخضر اللي اخترناه للheader */
   font-weight: 700;
 }
 .features-section .text-center p {
@@ -152,7 +166,7 @@ a {
 /* How It Works Section */
 .how-section {
   padding: var(--section-padding) 0;
-  background-color: var(--secondary); 
+  background-color: var(--secondary); /* خلفية فاتحة مختلفة شوي عن الفيشيرز */
 }
 
 .how-section .text-center h2 {
@@ -202,10 +216,13 @@ a {
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* تأثير hover */
 .step-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
+
 
   .how-section .text-center h2 {
     font-size: 2rem;
@@ -251,7 +268,7 @@ a {
     padding: 10px 25px;
   }
 
-/* footer*/
+
 .footer {
   background-color: var(--primary);
   color: #ffffff;
@@ -312,4 +329,3 @@ a {
   font-size: 0.85rem;
   opacity: 0.8;
 }
-
