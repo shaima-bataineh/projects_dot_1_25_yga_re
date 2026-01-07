@@ -188,6 +188,22 @@ a {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
+.deal-card{
+  background-color: #ffffff;
+  border-radius:12px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.deals-section h2 {
+    font-size: 2.5rem;        
+    font-weight: 700;          
+    color: #31694E;            /* لون متناسق مع مشروعك */
+    text-align: center;       
+    margin-bottom: 30px;       /* مسافة تحت العنوان */
+    border-bottom: 3px solid #31694E;  
+    display: inline-block;    
+    padding-bottom: 5px;       
 /* How It Works Section */
 .how-section {
   padding: var(--section-padding) 0;
