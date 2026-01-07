@@ -67,3 +67,8 @@ deals.forEach(deal => {
     console.log(`Deal ID: ${deal.id}, Client: ${deal.client}, Amount: $${deal.amount}, Status: ${deal.status}`);
 });
 
+// show deals
+const dealsContainer = document.getElementById("deals-container");
+dealsContainer.innerHTML = deals.map(deal => '<div class = "deal-card"><h3>' + deal.client + '</h3><p>Amount: $' 
+  + deal.amount + '<p>Status: ' + deal.status + '</p></div>').join('');
+  
