@@ -71,4 +71,5 @@ deals.forEach(deal => {
 const dealsContainer = document.getElementById("deals-container");
 dealsContainer.innerHTML = deals.map(deal => '<div class = "deal-card"><h3>' + deal.client + '</h3><p>Amount: $' 
   + deal.amount + '<p>Status: ' + deal.status + '</p></div>').join('');
-  
+   
+// filter to status open

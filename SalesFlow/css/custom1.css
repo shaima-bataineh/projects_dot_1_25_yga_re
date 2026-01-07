@@ -203,7 +203,7 @@ a {
     margin-bottom: 30px;       /* مسافة تحت العنوان */
     border-bottom: 3px solid #31694E;  
     display: inline-block;    
-    padding-bottom: 5px;       
+    padding-bottom: 5px;  }     
 /* How It Works Section */
 .how-section {
   padding: var(--section-padding) 0;
