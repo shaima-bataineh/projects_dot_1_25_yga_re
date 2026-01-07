@@ -72,4 +72,38 @@ const dealsContainer = document.getElementById("deals-container");
 dealsContainer.innerHTML = deals.map(deal => '<div class = "deal-card"><h3>' + deal.client + '</h3><p>Amount: $' 
   + deal.amount + '<p>Status: ' + deal.status + '</p></div>').join('');
    
-// filter to status open
+
+  // deals function
+function renderDeals(filteredDeals) {
+    const container = document.getElementById("deals-container");
+    container.innerHTML = ""; 
+
+    filteredDeals.forEach(deal => {
+        const card = document.createElement("div");
+        card.classList.add("col-md-4"); 
+        card.innerHTML = `
+            <div class="deal-card p-3 border rounded">
+                <p><strong>Deal ID:</strong> ${deal.id}</p>
+                <p><strong>Client:</strong> ${deal.client}</p>
+                <p><strong>Amount:</strong> $${deal.amount}</p>
+                <p><strong>Status:</strong> ${deal.status}</p>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// filter open deals just
+let openDeals = deals.filter(deal => deal.status === "Open");
+renderDeals(openDeals);
+
+// filter deals dynamically by search
+document.getElementById("searchDeals").addEventListener("input", function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+
+    const filtered = openDeals.filter(deal =>
+        deal.client.toLowerCase().includes(searchTerm)
+    );
+
+    renderDeals(filtered);
+});
