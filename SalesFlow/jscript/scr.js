@@ -51,5 +51,19 @@ function typeWords() {
   }
 }
 
+
+
 // start typing after page loads
 document.addEventListener("DOMContentLoaded", typeWords);
+
+// deals data
+const deals = [
+    { id: 1, client: "step Company", amount: 5000, status: "Open" },
+    { id: 2, client: "Flow Company", amount: 7500, status: "Closed" },
+    { id: 3, client: "Sales Company", amount: 12000, status: "Open" }
+];
+
+deals.forEach(deal => {
+    console.log(`Deal ID: ${deal.id}, Client: ${deal.client}, Amount: $${deal.amount}, Status: ${deal.status}`);
+});
+

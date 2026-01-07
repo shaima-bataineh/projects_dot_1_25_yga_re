@@ -90,7 +90,9 @@ a {
 }
 
 .hero-visual {
-  justify-content: flex-start; /* يرفع كلشي لفوق */
+   /* يرفع كلشي لفوق */
+  padding-top: 0;
+
 }
 
 .hero-image {
@@ -99,10 +101,11 @@ a {
 }
 
 .demo-box {
-  max-width: 100px;
+  max-width:420px;
   background: #fff;
   padding: 20px;
   border-radius: 12px;
+  margin-left: 0;
 }
 .demo-box input {
   border-radius: 10px;
