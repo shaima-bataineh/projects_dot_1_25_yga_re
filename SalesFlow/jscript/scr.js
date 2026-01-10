@@ -56,54 +56,104 @@ function typeWords() {
 // start typing after page loads
 document.addEventListener("DOMContentLoaded", typeWords);
 
-// deals data
+// بيانات الديلز  
 const deals = [
-    { id: 1, client: "step Company", amount: 5000, status: "Open" },
+    { id: 1, client: "Step Company", amount: 5000, status: "Open" },
     { id: 2, client: "Flow Company", amount: 7500, status: "Closed" },
-    { id: 3, client: "Sales Company", amount: 12000, status: "Open" }
+    { id: 3, client: "Sales Company", amount: 12000, status: "Open" },
+    { id: 4, client: "Vision Tech", amount: 9500, status: "Open" },
+    { id: 5, client: "Smart Solutions", amount: 3000, status: "Open" },
+    { id: 6, client: "Blue Market", amount: 15000, status: "Open" },
+    { id: 7, client: "Nova Systems", amount: 8200, status: "Closed" }
 ];
 
-deals.forEach(deal => {
-    console.log(`Deal ID: ${deal.id}, Client: ${deal.client}, Amount: $${deal.amount}, Status: ${deal.status}`);
-});
-
-// show deals
+// dom elements 
+const searchInput = document.getElementById("searchDeals");
 const dealsContainer = document.getElementById("deals-container");
-dealsContainer.innerHTML = deals.map(deal => '<div class = "deal-card"><h3>' + deal.client + '</h3><p>Amount: $' 
-  + deal.amount + '<p>Status: ' + deal.status + '</p></div>').join('');
-   
+const hintMessage = document.getElementById("hintMessage");
+const resetBtn = document.getElementById("resetBtn");
+const noResults = document.getElementById("noResults");
 
-  // deals function
+
+// تصفية الديلز المفتوحة 
+const openDeals = deals.filter(deal => deal.status === "Open");
+
+// أعلى Deal مفتوحة 
+const topOpenDeal = openDeals.reduce((max, deal) => deal.amount > max.amount ? deal : max);
+
+// show deals 
+
 function renderDeals(filteredDeals) {
-    const container = document.getElementById("deals-container");
-    container.innerHTML = ""; 
+    dealsContainer.innerHTML = "";
 
     filteredDeals.forEach(deal => {
-        const card = document.createElement("div");
-        card.classList.add("col-md-4"); 
-        card.innerHTML = `
-            <div class="deal-card p-3 border rounded">
+        const col = document.createElement("div");
+        col.classList.add("col-md-4");
+
+        let highlightClass = "";
+        if (deal.id === topOpenDeal.id) {
+            highlightClass = "top-deal"; // هذا لون مختلف للـ Top Deal
+        }
+
+        col.innerHTML = `
+            <div class="deal-card p-3 border rounded ${highlightClass}">
                 <p><strong>Deal ID:</strong> ${deal.id}</p>
                 <p><strong>Client:</strong> ${deal.client}</p>
                 <p><strong>Amount:</strong> $${deal.amount}</p>
                 <p><strong>Status:</strong> ${deal.status}</p>
             </div>
         `;
-        container.appendChild(card);
+        dealsContainer.appendChild(col);
     });
 }
 
-// filter open deals just
-let openDeals = deals.filter(deal => deal.status === "Open");
-renderDeals(openDeals);
+searchInput.addEventListener("input", function(e) {
+    const term = e.target.value.toLowerCase().trim();
 
-// filter deals dynamically by search
-document.getElementById("searchDeals").addEventListener("input", function(e) {
-    const searchTerm = e.target.value.toLowerCase();
+    // لو الحقل فارغ
+    if (term === "") {
+        dealsContainer.innerHTML = "";
+        hintMessage.style.display = "block"; // رسالة البداية
+        suggestionsList.style.display = "none";
+        noResults.style.display = "none";
+        return;
+    }
 
     const filtered = openDeals.filter(deal =>
-        deal.client.toLowerCase().includes(searchTerm)
+        deal.client.toLowerCase().includes(term)
     );
 
+    // إخفاء رسالة البداية
+    hintMessage.style.display = "none";
+
+    // render الصفقات
     renderDeals(filtered);
+    // ===== No results =====
+    if (filtered.length === 0) {
+        noResults.style.display = "block";  // تظهر رسالة لا توجد نتائج
+    } else {
+        noResults.style.display = "none";   // تختفي إذا في نتائج
+    }
+
+    // ===== اقتراحات =====
+    const suggestions = filtered.map(deal => deal.client);
+    suggestionsList.innerHTML = suggestions.map(name => `<li class="list-group-item">${name}</li>`).join('');
+    suggestionsList.style.display = suggestions.length ? "block" : "none";
+
+    // اختيار أي اقتراح
+    suggestionsList.querySelectorAll("li").forEach(li => {
+        li.addEventListener("click", () => {
+            searchInput.value = li.textContent;
+            renderDeals(openDeals.filter(d => d.client === li.textContent));
+            suggestionsList.style.display = "none";
+            noResults.style.display = "none"; // تختفي عند الاختيار
+        });
+    });
+});
+
+
+resetBtn.addEventListener("click", function () {
+    searchInput.value = "";
+    dealsContainer.innerHTML = "";
+    hintMessage.style.display = "block"; // ترجع الرسالة
 });
