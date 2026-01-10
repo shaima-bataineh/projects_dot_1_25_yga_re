@@ -56,7 +56,8 @@ function typeWords() {
 // start typing after page loads
 document.addEventListener("DOMContentLoaded", typeWords);
 
-// بيانات الديلز  
+
+// بيانات الديلز
 const deals = [
     { id: 1, client: "Step Company", amount: 5000, status: "Open" },
     { id: 2, client: "Flow Company", amount: 7500, status: "Closed" },
@@ -67,22 +68,26 @@ const deals = [
     { id: 7, client: "Nova Systems", amount: 8200, status: "Closed" }
 ];
 
-// dom elements 
+// DOM Elements
+
 const searchInput = document.getElementById("searchDeals");
 const dealsContainer = document.getElementById("deals-container");
 const hintMessage = document.getElementById("hintMessage");
 const resetBtn = document.getElementById("resetBtn");
+const suggestionsList = document.getElementById("suggestions");
 const noResults = document.getElementById("noResults");
 
-
-// تصفية الديلز المفتوحة 
+// ====================
+// تصفية الديلز المفتوحة
+// ====================
 const openDeals = deals.filter(deal => deal.status === "Open");
 
-// أعلى Deal مفتوحة 
+// اعلى ديلز مفتوحة
 const topOpenDeal = openDeals.reduce((max, deal) => deal.amount > max.amount ? deal : max);
 
-// show deals 
-
+// ====================
+// دالة عرض الديلز
+// ====================
 function renderDeals(filteredDeals) {
     dealsContainer.innerHTML = "";
 
@@ -92,7 +97,7 @@ function renderDeals(filteredDeals) {
 
         let highlightClass = "";
         if (deal.id === topOpenDeal.id) {
-            highlightClass = "top-deal"; // هذا لون مختلف للـ Top Deal
+            highlightClass = "top-deal"; // لون مختلف للـ Top Deal
         }
 
         col.innerHTML = `
@@ -107,18 +112,34 @@ function renderDeals(filteredDeals) {
     });
 }
 
+// ====================
+// Event Delegation للاقتراحات
+// ====================
+suggestionsList.addEventListener("click", (e) => {
+    if (e.target.tagName === "LI") {
+        searchInput.value = e.target.textContent;
+        renderDeals(openDeals.filter(d => d.client === e.target.textContent));
+        suggestionsList.style.display = "none";
+        noResults.style.display = "none";
+    }
+});
+
+// ====================
+// البحث عند الكتابة
+// ====================
 searchInput.addEventListener("input", function(e) {
     const term = e.target.value.toLowerCase().trim();
 
-    // لو الحقل فارغ
+    // الحقل فارغ إظهار رسالة البداية
     if (term === "") {
         dealsContainer.innerHTML = "";
-        hintMessage.style.display = "block"; // رسالة البداية
+        hintMessage.style.display = "block";
         suggestionsList.style.display = "none";
         noResults.style.display = "none";
         return;
     }
 
+    // تصفية النتائج
     const filtered = openDeals.filter(deal =>
         deal.client.toLowerCase().includes(term)
     );
@@ -126,34 +147,29 @@ searchInput.addEventListener("input", function(e) {
     // إخفاء رسالة البداية
     hintMessage.style.display = "none";
 
-    // render الصفقات
+    // عرض الصفقات
     renderDeals(filtered);
-    // ===== No results =====
+
+    //  رسالة No results 
     if (filtered.length === 0) {
-        noResults.style.display = "block";  // تظهر رسالة لا توجد نتائج
+        noResults.style.display = "block";
     } else {
-        noResults.style.display = "none";   // تختفي إذا في نتائج
+        noResults.style.display = "none";
     }
 
-    // ===== اقتراحات =====
+    //  اقتراحات 
     const suggestions = filtered.map(deal => deal.client);
     suggestionsList.innerHTML = suggestions.map(name => `<li class="list-group-item">${name}</li>`).join('');
     suggestionsList.style.display = suggestions.length ? "block" : "none";
-
-    // اختيار أي اقتراح
-    suggestionsList.querySelectorAll("li").forEach(li => {
-        li.addEventListener("click", () => {
-            searchInput.value = li.textContent;
-            renderDeals(openDeals.filter(d => d.client === li.textContent));
-            suggestionsList.style.display = "none";
-            noResults.style.display = "none"; // تختفي عند الاختيار
-        });
-    });
 });
 
-
+// ====================
+// زر Reset
+// ====================
 resetBtn.addEventListener("click", function () {
     searchInput.value = "";
     dealsContainer.innerHTML = "";
-    hintMessage.style.display = "block"; // ترجع الرسالة
+    hintMessage.style.display = "block";
+    suggestionsList.style.display = "none";
+    noResults.style.display = "none";
 });
