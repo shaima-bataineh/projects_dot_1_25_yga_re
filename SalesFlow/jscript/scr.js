@@ -69,7 +69,6 @@ const deals = [
 ];
 
 // DOM Elements
-
 const searchInput = document.getElementById("searchDeals");
 const dealsContainer = document.getElementById("deals-container");
 const hintMessage = document.getElementById("hintMessage");
@@ -77,44 +76,42 @@ const resetBtn = document.getElementById("resetBtn");
 const suggestionsList = document.getElementById("suggestions");
 const noResults = document.getElementById("noResults");
 
-// ====================
 // تصفية الديلز المفتوحة
-// ====================
 const openDeals = deals.filter(deal => deal.status === "Open");
 
-// اعلى ديلز مفتوحة
+// أعلى Deal
 const topOpenDeal = openDeals.reduce((max, deal) => deal.amount > max.amount ? deal : max);
 
-// ====================
-// دالة عرض الديلز
-// ====================
+// عرض الديلز
 function renderDeals(filteredDeals) {
     dealsContainer.innerHTML = "";
 
-    filteredDeals.forEach(deal => {
+    filteredDeals.forEach((deal, index) => {
         const col = document.createElement("div");
         col.classList.add("col-md-4");
 
-        let highlightClass = "";
-        if (deal.id === topOpenDeal.id) {
-            highlightClass = "top-deal"; // لون مختلف للـ Top Deal
-        }
-
         col.innerHTML = `
-            <div class="deal-card p-3 border rounded ${highlightClass}">
+            <div class="deal-card p-3 border rounded">
                 <p><strong>Deal ID:</strong> ${deal.id}</p>
                 <p><strong>Client:</strong> ${deal.client}</p>
                 <p><strong>Amount:</strong> $${deal.amount}</p>
                 <p><strong>Status:</strong> ${deal.status}</p>
             </div>
         `;
+
+        // ✨ تمييز أول Deal أو أعلى Deal
+        if (deal.id === topOpenDeal.id) {
+            const card = col.querySelector(".deal-card");
+            card.style.border = "2px solid #ffb703";
+            card.style.backgroundColor = "#fff8e1";
+            card.style.boxShadow = "0 0 15px rgba(255, 183, 3, 0.4)";
+        }
+
         dealsContainer.appendChild(col);
     });
 }
 
-// ====================
 // Event Delegation للاقتراحات
-// ====================
 suggestionsList.addEventListener("click", (e) => {
     if (e.target.tagName === "LI") {
         searchInput.value = e.target.textContent;
@@ -124,13 +121,10 @@ suggestionsList.addEventListener("click", (e) => {
     }
 });
 
-// ====================
 // البحث عند الكتابة
-// ====================
 searchInput.addEventListener("input", function(e) {
     const term = e.target.value.toLowerCase().trim();
 
-    // الحقل فارغ إظهار رسالة البداية
     if (term === "") {
         dealsContainer.innerHTML = "";
         hintMessage.style.display = "block";
@@ -139,33 +133,23 @@ searchInput.addEventListener("input", function(e) {
         return;
     }
 
-    // تصفية النتائج
     const filtered = openDeals.filter(deal =>
         deal.client.toLowerCase().includes(term)
     );
 
-    // إخفاء رسالة البداية
     hintMessage.style.display = "none";
-
-    // عرض الصفقات
     renderDeals(filtered);
 
-    //  رسالة No results 
-    if (filtered.length === 0) {
-        noResults.style.display = "block";
-    } else {
-        noResults.style.display = "none";
-    }
+    // رسالة No results
+    noResults.style.display = filtered.length === 0 ? "block" : "none";
 
-    //  اقتراحات 
-    const suggestions = filtered.map(deal => deal.client);
+    // اقتراحات
+    const suggestions = filtered.map(d => d.client);
     suggestionsList.innerHTML = suggestions.map(name => `<li class="list-group-item">${name}</li>`).join('');
     suggestionsList.style.display = suggestions.length ? "block" : "none";
 });
 
-// ====================
 // زر Reset
-// ====================
 resetBtn.addEventListener("click", function () {
     searchInput.value = "";
     dealsContainer.innerHTML = "";
