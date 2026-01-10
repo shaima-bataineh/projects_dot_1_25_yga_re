@@ -157,3 +157,12 @@ resetBtn.addEventListener("click", function () {
     suggestionsList.style.display = "none";
     noResults.style.display = "none";
 });
+
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("mainNav");
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+  
+  
