@@ -157,6 +157,8 @@ function typeTitle() { //اضافة تاثير الكتابة على العنو�
 
 window.addEventListener("load", typeTitle); // استدعاء الدالة عند تحميل الصفحة
 
+
+
 // الفنكشن للتعامل مع الـ DOM وتحميل الصفقات
 async function loadDeals() {
     try {
@@ -222,7 +224,7 @@ searchInput.addEventListener("input", () => {
     }
 });
 
-// زر Reset
+//   زر  يمسح النتئج مؤقتا بعدها برجع يعيدها بعد ثانية مع الرسالة التوجيهية Reset 
 resetBtn.addEventListener("click", () => {
     searchInput.value = "";
     document.getElementById("noResults").style.display = "none";
