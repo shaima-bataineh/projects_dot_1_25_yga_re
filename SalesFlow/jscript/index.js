@@ -133,6 +133,7 @@ const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("mainNav");
 
 btn.addEventListener("click", () => {
+    btn.classList.toggle("active");
   menu.classList.toggle("active");
 });
  
@@ -156,3 +157,77 @@ function typeTitle() { //اضافة تاثير الكتابة على العنو�
 
 window.addEventListener("load", typeTitle); // استدعاء الدالة عند تحميل الصفحة
 
+// الفنكشن للتعامل مع الـ DOM وتحميل الصفقات
+async function loadDeals() {
+    try {
+        // محاكاة تحميل البيانات بشكل async
+        const dealsData = await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const success = true; // غيرها false لتجربة الخطأ
+                if (success) resolve(deals);
+                else reject("Failed to load deals");
+            }, 1000);
+        });
+
+        const container = document.getElementById("deals-container");
+        container.innerHTML = "";
+
+        dealsData.forEach(deal => {
+            const div = document.createElement("div");
+            div.className = "col-md-4";
+
+            div.innerHTML = `
+                <div class="card p-3 h-100">
+                    <h5>${deal.client}</h5>
+                    <p>Amount: $${deal.amount}</p>
+                    <p>Status: ${deal.status}</p>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+
+    } catch (error) {
+        console.log("Error:", error);
+        alert(error);
+    }
+}
+
+//=================== البحث الحي
+
+searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    const filteredDeals = deals.filter(deal => deal.client.toLowerCase().includes(query));
+
+    const container = document.getElementById("deals-container");
+    container.innerHTML = "";
+
+    const noResults = document.getElementById("noResults");
+
+    if (filteredDeals.length === 0) {
+        noResults.style.display = "block";
+    } else {
+        noResults.style.display = "none";
+        filteredDeals.forEach(deal => {
+            const div = document.createElement("div");
+            div.className = "col-md-4";
+            div.innerHTML = `
+                <div class="card p-3 h-100">
+                    <h5>${deal.client}</h5>
+                    <p>Amount: $${deal.amount}</p>
+                    <p>Status: ${deal.status}</p>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+    }
+});
+
+// زر Reset
+resetBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    document.getElementById("noResults").style.display = "none";
+    loadDeals();
+});
+
+// استدعاء الدالة عند تحميل الصفحة
+loadDeals();
