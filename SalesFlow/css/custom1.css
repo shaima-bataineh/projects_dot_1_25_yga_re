@@ -4,6 +4,8 @@
 
 :root {
   --primary: #31694E;
+  --primary-light: #4F8B6D;
+  --primary-soft: #6FAE90;
   --secondary: #f3f6f8;
   --accent: #f2994a;
   --radius: 12px;
@@ -52,14 +54,11 @@ a {
   margin-right: 1rem;
   font-weight: 500;
   transition: color 0.3s;
-
 }
-
 .custom-navbar .nav-link.active {
   color: var(--primary);
   font-weight: 600;
 }
-
 .nav-link:hover {
   transform: scale(1.05);
 }
@@ -97,6 +96,17 @@ a {
     rgba(255, 255, 255, 0.9)
   );
 }
+ .hero-text {
+  max-width: 520px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.8s ease;
+}
+.hero-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .hero-visual {
    /* يرفع كلشي لفوق */
@@ -106,6 +116,12 @@ a {
 .hero-image {
   max-width: 90%;
   margin-top: -30px;
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
 .demo-box {
@@ -240,7 +256,6 @@ a {
   font-weight: 500;
 }
 
-
 /* How It Works Section */
 .how-section {
   padding: var(--section-padding) 0;
@@ -308,48 +323,57 @@ a {
   padding: var(--section-padding) 0;
   background: linear-gradient(
     135deg,
-    var(--primary),
-    #244d3a
+    #49c28e,
+    #477c61
   );
   color: #ffffff;
   text-align: center;
   border-radius: var(--radius);
   margin: 50px 0;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.05);
 }
+ 
 
 .cta-section h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 25px;
+  letter-spacing: -0.5px;
 }
 
 .cta-section .btn {
- font-size: 1.2rem;
+ background-color: #E6F3EE;
+  color: #31694E;
+  border: 2px solid #31694E;
+  padding: 14px 36px;
+  border-radius: 999px;
   font-weight: 600;
-  padding: 12px 35px;
-  border-radius: 50px;
-  background-color: var(--accent);
-  color: #ffffff;
-  border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .cta-section .btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-  opacity: 0.9; }
+ background-color: #31694E;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);}
 
   .cta-section .btn {
     font-size: 1rem;
     padding: 10px 25px;
   }
-
+ /* foooter styles */
 .footer {
   background-color: var(--primary);
   color: #ffffff;
   padding: 60px 0 30px;
 }
 
+.footer-brand h5 {
+  color:var(--primary) ;
+}
+.footer-brand span {
+  color: var(--accent);
+}
 .footer h5,
 .footer h6 {
   font-weight: 600;
@@ -600,7 +624,6 @@ input.form-control:focus {
   font-size: 0.85rem;
   color: #2e8b7a;
   text-decoration: none;
-
 }
 
 .help-link:hover {
@@ -620,7 +643,7 @@ input.form-control:focus {
   right: 0;
   width: 70%;
   z-index: 0;
-  opacity: 0.6; /* لتخفيف الألوان */
+  opacity: 1; /* لتخفيف الألوان */
 }
 .r-signin *:not(.r-illustration) {
   position: relative;
@@ -630,4 +653,10 @@ input.form-control:focus {
 h5,
 .r-signin p {
   margin-top: 0;
+}
+.form-message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
+  display: none;
 }
