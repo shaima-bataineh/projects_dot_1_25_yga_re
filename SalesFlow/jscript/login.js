@@ -1,3 +1,4 @@
+// Interactive form validation logic
 
 document.addEventListener("DOMContentLoaded", function () { // انتظار تحميل الصفحة يعني بس تتحمل عناصر htmlالخاصة بالفورم يشتغل الجافا
  

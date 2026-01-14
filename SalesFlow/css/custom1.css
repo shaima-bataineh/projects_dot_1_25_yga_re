@@ -128,7 +128,10 @@ a {
    /* يرفع كلشي لفوق */
   padding-top: 0;
   overflow: hidden;
+  overflow: hidden;
 }
+
+
 
 
 @keyframes float {
