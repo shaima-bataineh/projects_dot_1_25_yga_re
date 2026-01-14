@@ -91,8 +91,6 @@ a {
 }
 
 
-
-
 .cta-btn {
   background-color: var(--accent);
   color: #fff;
@@ -131,13 +129,10 @@ a {
 .hero-visual {
    /* يرفع كلشي لفوق */
   padding-top: 0;
+  overflow: hidden;
 }
 
-.hero-image {
-  max-width: 90%;
-  margin-top: -30px;
-  animation: float 6s ease-in-out infinite;
-}
+
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
@@ -163,9 +158,11 @@ a {
 
 .hero-image {
   max-width: 100%;
-  transform: translateX(30px);
+  margin-top: -30px;
+  animation: float 6s ease-in-out infinite;
   height: auto;
 }
+
 .hero-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -195,7 +192,7 @@ a {
 /* Features Section */
 .features-section {
   padding: 80px 0;
-  background-color: #f5f7f6; 
+  
 }
 .features-section .text-center h2 {
   font-size: 2.5rem;
@@ -228,9 +225,19 @@ a {
   line-height: 1.6;
 }
 .feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--accent);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.feature-card:hover .feature-icon {
+  transform: scale(1.2) rotate(10deg);
+  color: #f17c20;
+}
+
 /* deals section */
 .deal-card{
   background-color: #ffffff;
@@ -289,14 +296,26 @@ a {
   font-weight: 700;
 }
 
-.step-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 30px 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  position: relative;
+.step-card::before {
+  font-family: "bootstrap-icons";
+  content: attr(data-step-icon);
+  font-size: 2.5rem;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
+.step-card:hover::before {
+  transform: scale(1.2) rotate(15deg);
+  background: #f17c20;
+}
+
+
 
 .step-card h5 {
   font-size: 1.4rem;
@@ -311,23 +330,32 @@ a {
   line-height: 1.6;
 }
 
-.step-card::before {
-  content: attr(data-step-icon);
-  font-size: 2.5rem;
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #ffffff;
-  background-color: var(--primary);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.step-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+.step-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+.step-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.how-section .row.g-4 {
+  justify-content: center;
+  gap: 2rem;
+}
+
+
 
 /* تأثير hover */
 .step-card:hover {
@@ -382,7 +410,7 @@ a {
   }
  /* foooter styles */
 .footer {
-  background-color: var(--primary);
+  background-color: #4c876b;
   color: #ffffff;
   padding: 60px 0 30px;
 }
@@ -508,7 +536,7 @@ a {
 body.login-page {
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
-  background: linear-gradient(135deg, #e9f4f2, #ffffff);
+  background: linear-gradient(358deg, #258e5c7d, #198754);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -517,7 +545,7 @@ body.login-page {
 
 /* LOGIN CARD */
  .login-card {
-  background: #fcfffb;
+  background: #bde1ce;
   border-radius: 16px;
   padding: 40px;
   max-width: 800px;
@@ -582,9 +610,15 @@ h5 .sale{
 }
 /* DIVIDER */
 .divider {
-   border-left: 1px solid #eee;
-  background-color: #e5e5e5;
- margin: 30px 0;
+  width: 1px;
+  height: 70%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  margin: auto 30px;
 }
 
 .btn-lg{
@@ -596,16 +630,35 @@ h5 .sale{
 .btn-lg:hover{
   background-color: #2a5a42;
 }
-.btn-success{
-  width: 200px;
-  display: block;
-  margin: 0 auto;
 
+/* sigin btn*/
+.signin-btn {
+  width: 220px;
+  padding: 10px 0;
+  margin: 18px auto 0;
+  display: block;
+
+  background-color: #2f7d57;
+  border: none;
+  border-radius: 8px;
+
+  font-weight: 500;
+  font-size: 15px;
+
+  transition: all 0.3s ease;
 }
-.btn-success:hover{
-  background-color: #2e664a;
-  box-shadow: 0 0 5px rgba(49,105,78,0.3);
+
+.signin-btn:hover {
+  background-color: #276a4a;
+  box-shadow: 0 8px 20px rgba(54, 142, 100, 0.35);
+  transform: translateY(-2px);
 }
+
+.signin-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(123, 160, 142, 0.838);
+}
+
 /* INPUTS */
 .input-group-text {
   background: #f4f6f8;
@@ -637,40 +690,63 @@ input.form-control:focus {
   box-shadow: none;
   border-color: #31694E; 
 }
- 
+ .form-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-label {
+  font-size: 14px;
+  color: #3f5f52;   /* أخضر غامق ناعم */
+  cursor: pointer;
+}
+.form-check-label:hover {
+  color: #2f4f43;
+}
+
 /* LINKS */
 .help-link {
   font-size: 0.85rem;
   color: #2e8b7a;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .help-link:hover {
   text-decoration: underline;
 }
-
-.r-signin p {
+.or-text {
   text-align: center;
   position: relative;
-  margin: 20px 0;
-  color: #666;
+  margin: 24px 0;
+  color: #6b6b6b;
   font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
 }
-.r-illustration {
-  position:relative;
-  bottom: 0;
+
+/* الخطوط الجانبية */
+.or-text::before,
+.or-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.or-text::before {
+  left: 0;
+}
+
+.or-text::after {
   right: 0;
-  width: 70%;
-  z-index: 0;
-  opacity: 1; /* لتخفيف الألوان */
-}
-.r-signin *:not(.r-illustration) {
-  position: relative;
-  z-index: 1;
 }
 
 h5,
-.r-signin p {
+.or-text p {
   margin-top: 0;
 }
 .form-message {
@@ -678,4 +754,27 @@ h5,
   font-weight: bold;
   color: green;
   display: none;
+}
+/* login footer*/
+.login-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 13px;
+  color: rgba(63, 95, 82, 0.6);
+}
+
+.login-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  color: #3f5f52;
+}
+
+@media (max-width: 576px) {
+  .signin-btn {
+    width: 100%;
+    min-height: 48px;
+  }
 }
