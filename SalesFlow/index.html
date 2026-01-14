@@ -92,15 +92,6 @@
             <a href="#" id="get" class="btn btn-accent " >
               Start Free Demo
             </a>
-            <div class="demo-box mt-5">
-       <input type="text" id="businessname" class="form-control mb-3"
-           placeholder=" Enter your Business Name">
-
-      <button id="demoBtn" class="btn btn-dark" disabled>
-        Try Live Demo
-      </button>
-      <p id="demoMessage" class="mt-3"></p>
-    </div>
           </div>
            
           <!-- RIGHT: IMAGE -->
@@ -155,13 +146,17 @@
     <!-- Deals Section -->
 <section id="deals" class="deals-section py-5">
   <div class="container">
-    <h2 class="mb-4 text-center">🔍 Search for Deals</h2>
-    <input type="text" id="searchDeals" class="form-control mb-3" placeholder="Search by client name..">
+    <h2 class="mb-4 text-center">👥 Demo Customers</h2>
+    
+    <button id="loadDealsBtn" class="btn btn-accent mb-3"> Load Demo Customers</button> <!--new load data using api.--->
+    <p id="dealsStatus" class="text-muted text-center"></p><!--new load data using api--->
+
+    <input type="text" id="searchDeals" class="form-control mb-3" placeholder="Search by customer name..">
     <ul id="suggestions" class="list-group mb-2"></ul> 
     <p id="noResults" class="text-muted mt-2" style="display:none;">No results found</p>
 
     <p id="hintMessage" class="text-muted text-center pulse-glow">
-  Start typing to see deals
+  Start by loading demo customers or searching deals
 </p>
     <div id="deals-container" class="row g-3"></div>
     <button id="resetBtn" class="btn btn-outline-secondary mb-4 ms-2"> Reset </button>
