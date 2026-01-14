@@ -89,6 +89,8 @@ a {
   background-color: var(--accent);
   margin-top: 4px;
 }
+
+
 .cta-btn {
   background-color: var(--accent);
   color: #fff;
@@ -128,10 +130,7 @@ a {
    /* يرفع كلشي لفوق */
   padding-top: 0;
   overflow: hidden;
-  overflow: hidden;
 }
-
-
 
 
 @keyframes float {
