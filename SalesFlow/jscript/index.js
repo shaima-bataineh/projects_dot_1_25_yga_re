@@ -13,6 +13,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetBtn = document.getElementById("resetBtn");
   const suggestionsList = document.getElementById("suggestions");
   const noResults = document.getElementById("noResults");
+  const titleText = "Manage Your Sales With a Smarter Flow";
+const titleEl = document.getElementById("typingTitle");
+const textEl = document.getElementById("hero-text");
+
+let i = 0;
+function typeTitle() {
+  if (i < titleText.length) {
+    titleEl.textContent += titleText.charAt(i);
+    i++;
+    setTimeout(typeTitle, 50);
+  } else {
+    textEl.classList.add("show");
+  }
+}
+
+window.addEventListener("load", typeTitle);
+
 
   let apiDeals = []; // مكان تخزين الداتا المحملة
   let isDealsLoaded = false;
