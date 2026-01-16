@@ -1,61 +1,145 @@
 body {
-  background-color: #f1d6c7;
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f6db;
+  transition: background 0.3s, color 0.3s;
 }
 
+/* App layout */
 .app {
  max-width: 1200px;
- margin: 0 auto;
- padding: 2rem;
- text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  transition: background 0.3s, color 0.3s;
+ color: #111; 
 }
-
-.header h1 {
-  margin-bottom: 0.5rem;
+.dark {
+  background-color: #1a1a1a;
+  color: #fff;
 }
-.header p {
-  color: #555;
+.dark-btn {
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #eee;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
 }
-
-.cards-container {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 2rem;}
-
-  .card {
-  background-color: white;
-  padding: 1.5rem;
-  width: 220px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+ .app.dark {
+  background-color:  #121212;
+  color: #eee;
+ }
+.dark .dark-btn {
+  background-color: #555;
+  color: #fff;
+}
+/* Cards */
+.card {
+  background-color: #2f4f2f;
+  color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
+  transition: transform 0.3s, opacity 0.5s, background 0.3s, color 0.3s;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards; /* استخدم fadeIn وليس fadeUp */
+}
+
+.app.dark .card {
+  background-color: #cfe8b0;
+  color: #111;
+}
+.dark .header h1{
+  color: #fff;
+}
+/* Header */
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+  color: #2b2b2b;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+/* Cards layout */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
 }
 
 .card h3 {
-  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 0.6rem;
 }
 
+.card p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  color: #888888;
+ }
+/* Status badge */
 .card .status {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.3rem 0.7rem;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  color: white;
+  margin-top: 1.2rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .status.success {
-  background-color: #4caf50;
+  background: rgba(76, 175, 80, 0.15);
+  color: #419f45;
 }
 
 .status.info {
-  background-color: #2196f3;
+  background: rgba(33, 150, 243, 0.15);
+  color: #1565c0;
 }
 
 .status.warning {
-  background-color: #ff9800;
+  background: rgba(255, 152, 0, 0.15);
+  color: #e65100;
+}
+
+.app.dark .status.success {
+  background: rgba(76, 175, 80, 0.25);
+  color: #1b5e20;
+}
+
+.app.dark .status.info {
+  background: rgba(33, 150, 243, 0.25);
+  color: #0d47a1;
+}
+
+.app.dark .status.warning {
+  background: rgba(255, 152, 0, 0.25);
+  color: #bf360c;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
