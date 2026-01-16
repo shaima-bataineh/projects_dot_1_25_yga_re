@@ -83,10 +83,13 @@ body {
 
 .card h3 {
   font-size: 1.1rem;
-  color: #444;
+  color: #f5ebeb;
   margin-bottom: 0.6rem;
 }
-
+/* make color black in dark mode to show text in card*/
+.dark .card h3{
+  color:#111;
+}
 .card p {
   font-size: 1.6rem;
   font-weight: bold;
