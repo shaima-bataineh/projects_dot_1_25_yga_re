@@ -12,6 +12,7 @@ function Counter() {
         setCount(count - 1);
     }
 
+
     function reset() {
         setCount(0);
     }
