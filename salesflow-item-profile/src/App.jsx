@@ -1,39 +1,44 @@
-// 19-1 HomeWork
+// 19-1 Home
 
-import { useState } from "react";
-import ItemCard from "./components/ItemCard";//تعرض بيانات العميل
-import Controls from "./components/Controls";// تحتوي على ازرار التحكم 
-import "./App.css";// ملف التنسيق
+import { useState, useEffect } from "react";
+import ItemCard from "./components/ItemCard"; //تعرض بيانات العميل
+import Controls from "./components/Controls"; // تحتوي على ازرار التحكم 
+import "./App.css"; // ملف التنسيق
 
 
 function App() {
+  useEffect(() => {
+    fetch("https://dummyjson.com/products")
+      .then(res => res.json())
+      .then(data => console.log(data.products)) // عرض المنتجات في Console
+      .catch(err => console.log(err));
+  }, []);
 
   // الحالة الابتدائية
-    const initialItem = {
+  const initialItem = {
     name: "Shaimaa Jamal",
-    deals:0,
-    industry:" Marketing" ,   
-    };
+    deals: 0,
+    industry: "Marketing",
+  };
 
-     const [item , setItem] = useState(initialItem);// item هي دالة لتغيرsetItem 
-     const [newName, setNewName] = useState("");
+  const [item, setItem] = useState(initialItem);
+  const [newName, setNewName] = useState("");
 
-
- return (
+  return (
     <div className="app">
-        <h1>SalesFlow-Item Profile</h1>
-         <ItemCard item={item} setItem={setItem}  />
+      <h1>SalesFlow-Item Profile</h1>
+      <h1>Products</h1>
+      <ItemCard item={item} setItem={setItem} />
 
-         <Controls
-         item={item}
-         setItem={setItem}
-         newName={newName}
-         setNewName={setNewName}
-         resetItem={() => setItem(initialItem)} // دالة لارجاع العنصر للبدايةresetitem
-
-         />
-
+      <Controls
+        item={item}
+        setItem={setItem}
+        newName={newName}
+        setNewName={setNewName}
+        resetItem={() => setItem(initialItem)}
+      />
     </div>
- );
+  );
 }
+
 export default App;
