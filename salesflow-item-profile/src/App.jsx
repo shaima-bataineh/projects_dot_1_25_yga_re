@@ -1,10 +1,10 @@
 // 19-1 Home
 
 import { useState, useEffect } from "react";
-import ItemCard from "./components/ItemCard"; //تعرض بيانات العميل
-import Controls from "./components/Controls"; // تحتوي على ازرار التحكم 
+import ItemCard from "./Components/ItemCard"; //تعرض بيانات العميل
+import Controls from "./Components/Controls"; // تحتوي على ازرار التحكم 
 import "./App.css"; // ملف التنسيق
-
+import React from "react";
 
 function App() {
   useEffect(() => {
