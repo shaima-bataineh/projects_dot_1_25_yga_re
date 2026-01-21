@@ -159,3 +159,92 @@ body {
     width: 100%;
   }
 }
+.layout {
+  display: flex;
+  gap: 20px;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  flex: 1.5;
+}
+
+/* Orders Container */
+.orders {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.orders h2 {
+  margin-bottom: 16px;
+  color: #222;
+}
+
+/* Grid */
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Order Card */
+.order-card {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  transition: 0.3s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* Header */
+.order-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.order-icon {
+  font-size: 26px;
+  color: #0d6efd;
+}
+
+/* Total */
+.total {
+  margin: 12px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #198754;
+}
+
+/* Info Row */
+.order-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+}
+
+.order-info span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* States */
+.loading {
+  color: #333;
+}
+
+.error {
+  color: red;
+}

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 function ItemCard({ item, setItem}) { // appلعرض بيانات العميل لازم يكون اول حرف فيه كابيتل يستخدم الايتم يلي جاي من الcomponent ItemCard 
