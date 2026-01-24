@@ -1,0 +1,44 @@
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+ 
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background-color: #31694E;
+  border-color: #31694E;
+}
+
+.btn-primary:hover {
+  background-color: #285840;
+  border-color: #285840;
+}
+
+/* ===== Form Controls ===== */
+input.form-control:focus {
+  border-color: #31694E;
+  box-shadow: 0 0 0 0.2rem rgba(49, 105, 78, 0.15);
+}
+
+/* ===== Links ===== */
+a {
+  color: #31694E;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Utility ===== */
+.text-muted {
+  font-size: 0.9rem;
+}

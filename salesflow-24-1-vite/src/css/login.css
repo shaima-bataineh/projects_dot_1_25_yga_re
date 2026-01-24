@@ -1,0 +1,255 @@
+/* ===== Login Page ===== */
+body.login-page {
+  min-height: 100vh;
+  background: linear-gradient(358deg, #258e5c7d, #198754);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Login Card ===== */
+.login-card {
+  background: #bde1ce;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(127,100,100,0.08);
+  padding: 50px;
+  width: 100%;
+  margin: auto;
+  min-height: 400px;
+  max-width: 1000px; 
+  transition: all 0.3s ease;
+  position: relative; /* مهم لرسائل validation */
+}
+
+.login-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Brand ===== */
+.brand-top{
+ text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 70px;
+}
+.brand-top h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.brand-top span {
+  color: #f2994a;
+}
+.brand-top h1 {
+  color: #198754;
+}
+.invalid-feedback {
+  display: none; /* نخليه مخفي افتراضياً */
+  font-size: 0.85rem;
+  color: #dc3545; /* Bootstrap danger red */
+  margin-top: 6px;
+  padding-left: 4px;
+  font-weight: 500;
+}
+
+.is-invalid + .invalid-feedback {
+  display: block;
+}
+/*heading h5 */
+  h5 {
+  font-family: 'Poppins', 'Segoe UI', sans-serif; 
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  font-weight: 600; 
+  font-size: 1.5rem; 
+  color: #31694E; 
+  margin-bottom: 2rem; 
+  letter-spacing: 0.5px; 
+  }
+  h5 .sale{
+  color: #f2994a;
+  font-weight: 600; 
+ }
+ .sale {
+  color: var(--primary); /* لتسليط الضوء على كلمات مهمة */
+}
+
+.divider {
+  width: 1px;
+  height: 70%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  margin: auto 30px;
+}
+.btn-lg{
+  color: #e7f1f9;
+  background-color: #31694E; 
+  transform: translateY(-3px);
+}
+
+.btn-lg:hover{
+  background-color: #2a5a42;
+}
+
+/* sigin btn*/
+.signin-btn {
+  width: 220px;
+  padding: 10px 0;
+  margin: 18px auto 0;
+  display: block;
+
+  background-color: #2f7d57;
+  border: none;
+  border-radius: 8px;
+
+  font-weight: 500;
+  font-size: 15px;
+
+  transition: all 0.3s ease;
+}
+.signin-btn:hover {
+  background-color: #276a4a;
+  box-shadow: 0 8px 20px rgba(54, 142, 100, 0.35);
+  transform: translateY(-2px);
+}
+
+.signin-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(123, 160, 142, 0.838);
+}
+
+/* INPUTS */
+.input-group-text {
+  background: #f4f6f8;
+  border: none;
+  border: 1px solid #ccc; 
+}
+
+input.form-control {
+  width: 100%;          /* يغطي كل عرض العمود Left */
+  border-radius: var(--radius); 
+  border: 1px solid #ccc;
+  transition: all 0.3s ease; /* smooth effect للـ hover */
+}
+
+input.form-control:hover,
+input.form-control:focus {
+  border-color: #31694E; 
+  box-shadow: 0 0 5px rgba(49,105,78,0.3); 
+  outline: none; /* إزالة الإطار الافتراضي */
+}
+
+.form-control {
+  border: none;
+  background: #f4f6f8;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #31694E; 
+}
+ .form-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-label {
+  font-size: 14px;
+  color: #3f5f52;   /* أخضر غامق ناعم */
+  cursor: pointer;
+}
+.form-check-label:hover {
+  color: #2f4f43;
+}
+
+.or-text {
+  text-align: center;
+  position: relative;
+  margin: 24px 0;
+  color: #6b6b6b;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* الخطوط الجانبية */
+.or-text::before,
+.or-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.or-text::before {
+  left: 0;
+}
+
+.or-text::after {
+  right: 0;
+}
+
+h5,
+.or-text p {
+  margin-top: 0;
+}
+.form-message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
+  display: none;
+}
+
+
+
+/* ===== Social Sign In ===== */
+.r-signin button {
+  width: 100%;
+  border: 1px solid #dee2e6;
+  background-color: #ffffff;
+  padding: 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.r-signin button:hover {
+  background-color: #f4f6f8;
+  transform: translateY(-2px);
+}
+
+
+
+/* login footer*/
+.login-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 13px;
+  color: rgba(63, 95, 82, 0.6);
+}
+
+.login-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  color: #3f5f52;
+}
+
+@media (max-width: 576px) {
+  .signin-btn {
+    width: 100%;
+    min-height: 48px;
+  }
+}
