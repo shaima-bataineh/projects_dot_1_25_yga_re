@@ -1,0 +1,52 @@
+/* ===== Navbar ===== */
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: all 0.3s ease;
+}
+
+/* Logo */
+.custom-navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #1f3d2b;
+}
+
+.custom-navbar .navbar-brand span {
+  color: var(--accent);
+}
+
+/* Links */
+.custom-navbar a {
+  color: #154a15d6;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-navbar a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* ===== Scrolled State ===== */
+.custom-navbar.scrolled {
+  background-color: #fcfefd;
+  box-shadow: 0 2px 10px var(--shadow-light);
+  backdrop-filter: blur(8px);
+}
+
+.custom-navbar.scrolled a,
+.custom-navbar.scrolled .navbar-brand {
+  color: #154a15d6;
+}

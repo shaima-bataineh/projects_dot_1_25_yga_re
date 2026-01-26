@@ -1,9 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom"; // مهم جدا للتنقل بين الصفحات
-
+import { useEffect, useState } from "react";
+import "../css/Navbar.css";
 function Navbar() {
+  const [scrolled,setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll =() => {
+      setScrolled(window.scrollY > 60);
+    };
+    window.addEventListener("scroll",handleScroll);
+    return () => window.removeEventListener("scroll",handleScroll);
+  }, []);
+
   return (
-    <nav className="navbar navbar-expand-lg custom-navbar">
+    <nav className={`navbar navbar-expand-lg custom-navbar ${scrolled ? "scrolled" : ""}`}>
+
       <div className="container">
 
         {/* Logo */}
