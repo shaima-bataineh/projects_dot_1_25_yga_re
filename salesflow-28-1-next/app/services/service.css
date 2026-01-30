@@ -1,0 +1,100 @@
+.services {
+  text-align: center;/* يوسط العنوان والنص*/
+  padding: 80px 20px; /* مسافة من الاعلى والاسفل */
+  background: linear-gradient(180deg, #f5f5f5 0%, #e8f3ee 100%);
+}
+
+.services h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #214d3a;
+}
+
+.services p {
+  margin-bottom: 60px;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.service-cards {
+  display: flex;/* يتم توزيع البطاقات بشكل افقي*/
+  justify-content: center;
+  gap: 30px;/* مسافة فراغ بين البطاقات*/
+  flex-wrap: wrap;/* بلف البطاقات للشاشات الصغيرة بحيث ما تظل على نفس الحجم*/
+}
+
+.card {
+  background: #fff;
+  padding: 35px 25px 25px;
+  border-radius: 15px;
+  width: 260px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;/* يعطي تاثير سلس عند الهوفر*/
+  cursor: pointer;/*يجعل البطاقة تفاعلية على شكل الماوس*/
+  display: flex;
+  flex-direction: column;/* برتب المحتوى عامودي*/
+  align-items: center;
+  position: relative;
+}
+
+.card img {
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #31694e;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #31694e;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #214d3a;
+  transform: translateY(-3px);
+}
+
+/* Hover effect for card */
+.card:hover {
+  transform: translateY(-10px);/* تتحرك البطاقة بمقدار*/
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);/*يزداد لاظهار الحركة*/
+}
+
+.card:hover img {
+  transform: scale(1.2) rotate(10deg);/* هاد يكبر الايقونة وتدور شوي */
+}
+
+/* Fade-in animation */
+.card {
+  opacity: 0;
+  transform: translateY(20px);/* تاثير دخول سلس*/
+  animation: fadeInUp 0.6s forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }/* بكون في تاخير في الظهور بحيث تظهر كل بطاقة بعد البطاقة الاخرى */
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
