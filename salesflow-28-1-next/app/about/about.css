@@ -14,22 +14,24 @@
   position: relative;
   text-align: center;
   margin-top: 20px;
-  padding: 140px 20px;
   border-radius: 30px;
-  background: linear-gradient(135deg, #68db8e, #ffffff);
+  background: linear-gradient(135deg, #a8e6cf 0%, #56ab2f 100%);
+  color: #1b1b1b; /* نص داكن للوضوح */
+  padding: 80px 20px;
+
 }
 
 .about-hero h1 {
   font-size: 3rem;
   font-weight: 700;
-  color: #1f3d2e;
+  line-height: 1.2;
 }
 
 .about-hero p {
-  max-width: 700px;
+  max-width: 600px;
   margin: 20px auto 0;
   font-size: 1.2rem;
-  color: #555;
+  
 }
 
 /* IMAGE */
@@ -49,15 +51,13 @@
 
 
 .btn-about {
-  display: inline-block;
-  margin-top: 30px;
-  background-color: #31694e;
+  background: linear-gradient(90deg, #56ab2f, #a8e6cf);
   color: #fff;
-  padding: 12px 25px;
-  border-radius: 10px;
+  padding: 12px 28px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-about:hover {
@@ -137,7 +137,7 @@
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s ease;
+  transition: all 0.6s ease-out;
 }
 
 .fade-up.show {

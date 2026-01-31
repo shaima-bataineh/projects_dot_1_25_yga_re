@@ -1,6 +1,6 @@
 "use client";
 import "./Footer.css";
-import Backtotop from "./Backtotop";
+import Backtotop from "@/components/common/Backtotop";
 export default function Footer() {
   
   return (

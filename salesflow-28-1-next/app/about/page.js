@@ -4,22 +4,31 @@ import { useEffect } from "react";
 
 export default function About() {
   useEffect(() => {
-    const elements = document.querySelectorAll(".fade-up");
+  const elements = document.querySelectorAll(".fade-up");
+  const isMobile = window.innerWidth < 768;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: isMobile ? 0.1 : 0.25,
+      rootMargin: isMobile ? "0px 0px -30px 0px" : "0px",
+    }
+  );
 
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  elements.forEach((el) => observer.observe(el));
+
+  return () => {
+    observer.disconnect(); // أفضل طريقة لإيقاف observer بدل unobserve لكل عنصر
+  };
+}, []);
+
 
   return (
     <main className="about-page">
@@ -37,6 +46,8 @@ export default function About() {
          src="/das11.png"
          alt="Sales dashboard"
         className="hero-image"
+         width={900}
+        height={500}
          />
           </div>
       </section>

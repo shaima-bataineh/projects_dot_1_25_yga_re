@@ -1,12 +1,11 @@
 
 import "./globals.css";
-import "@/components/Footer.css";
+import "@/components/layout/Footer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import BootstrapClient from "@/components/boot";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import NavbarClient from "@/components/NavbarClient"; // خط أحمر يختفي الآن بعد إنشاء الملف
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import React from "react";
 import dynamic from "next/dynamic";
 
@@ -19,8 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="app-layout">
-         <NavbarClient />
-        
+         <Navbar />
         <main className="page-content">
         <BootstrapClient />
         {children}

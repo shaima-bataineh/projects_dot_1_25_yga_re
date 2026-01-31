@@ -56,30 +56,29 @@ export default function Navbar() {
             </li>
 
             <li className="nav-item">
-              <a className={`nav-link ${pathname === "/about" ? "active" : ""}`}
+              <Link className={`nav-link ${pathname === "/about" ? "active" : ""}`}
               onClick={() => setActive("about")} href="/about">
 
                 About
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className={`nav-link ${pathname === "/services" ? "active" : ""}`}
+              <Link className={`nav-link ${pathname === "/services" ? "active" : ""}`}
               onClick={() => setActive("services")} href="/services">
 
             Services
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
 
-              <a 
-            
+              <Link
               className={`nav-link ${pathname === "/contact" ? "active" : ""}`}
               onClick={() => setActive("contact")}
                href="/contact">
                 Contact
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item ms-lg-4">
