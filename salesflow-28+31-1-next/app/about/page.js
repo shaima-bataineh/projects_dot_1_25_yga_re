@@ -46,8 +46,8 @@ export default function About() {
          src="/das11.png"
          alt="Sales dashboard"
         className="hero-image"
-         width={900}
-        height={500}
+         width={800}
+        height={400}
          />
           </div>
       </section>

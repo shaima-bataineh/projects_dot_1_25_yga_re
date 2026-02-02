@@ -446,15 +446,14 @@ display: flex;
 }
 
 .back-to-top {
-  position: relative;
-  bottom: auto;
- margin: 20px auto 0 auto;
-  right: auto;
+  position:fixed;
+  bottom: 30px;
+ margin: 20px;
 
   background: #2f7d57;
   color: white;
   border: none;
- margin: 20px auto 0 auto;
+  right: 30px;
  padding: 10px 20px;
   width: 45px;
   height: 45px;
@@ -462,15 +461,18 @@ display: flex;
 
   font-size: 22px;
   cursor: pointer;
-
-  display: flex;
   align-items: center;
   justify-content: center;
-
+  display: flex;
+  opacity: 0;         /* يبدأ مخفي */
+  pointer-events: none; /* مش قابل للضغط وهو مخفي */
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   transition: 0.3s ease;
 }
-
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto; /* يصبح قابل للضغط */
+}
 
 .back-to-top:hover {
   color: #c2e4d5;
