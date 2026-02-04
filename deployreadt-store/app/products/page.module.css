@@ -1,0 +1,69 @@
+.page {
+  background-color: #fff; /* خلفية الصفحة بيضاء */
+  min-height: 100vh;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.main {
+  max-width: 1200px; /* حجم محتوى معقول */
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* شبكه متجاوبه */
+  margin-top: 24px;
+}
+
+.card {
+  background-color: #fff; /* صندوق أبيض */
+  color: #333;            /* نص غامق */
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card h3, .card p {
+  color: #333; /* تأكد أن العناوين والفقرات لونها غامق */
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.box {
+  background-color: #fff;
+  color: #333; /* نص غامق بدل الأبيض */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
