@@ -7,7 +7,7 @@ export default function BackTOTop(){
 
  useEffect(() => {
     const handlescroll = () => {
-        setShow(window.scrollY >100);
+        setShow(window.scrollY > 120);
     };
      window.addEventListener("scroll",handlescroll);
      return () => window.removeEventListener("scroll",handlescroll);
@@ -17,8 +17,10 @@ export default function BackTOTop(){
  if (!show) return null ;
  return(
     <button onClick={() => window.scrollTo({top: 0 , behavior: "smooth"})}
+     
     className="back-to-top">
-        ⬆
+    <i className="bi bi-arrow-up"></i>
+        
     </button>
  );
 }

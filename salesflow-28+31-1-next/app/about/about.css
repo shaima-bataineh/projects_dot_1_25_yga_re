@@ -1,158 +1,215 @@
-/* about page */
+/* root */
 
-.about-page {
-  padding: 80px 20px;
-  max-width: 1800px;
-  margin: 0 auto;
-  background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
-  min-height: 100vh;
+:root {
+/* Brand */
+  --brand-900: #0b2e26;   /* عناوين قوية */
+  --brand-700: #0f766e;   /* أساسي */
+  --brand-500: #14b8a6;   /* CTA */
+  --brand-300: #99f6e4;   /* لمسات */
+
+  /* Neutral */
+  --gray-900: #0f172a;
+  --gray-700: #334155;
+  --gray-400: #64748b;
+  --gray-100: #f8fafc;
+
+  --white: #ffffff;
 }
-
-
 /* HERO */
-.about-hero {
-  position: relative;
-  text-align: center;
-  margin-top: 20px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #a8e6cf 0%, #56ab2f 100%);
-  color: #1b1b1b; /* نص داكن للوضوح */
-  padding: 80px 20px;
 
+.lux-hero{
+  height: 80vh;
+  background:
+   linear-gradient(
+  90deg,
+  rgba(0,0,0,0.75) 0%,
+  rgba(0,0,0,0.65) 35%,
+  rgba(0,0,0,0.3) 65%,
+  rgba(0,0,0,0.1) 100%
+),
+
+    url("/officework.jpg") center/cover no-repeat;
+
+  display:flex;
+  align-items:center;
+  justify-content: flex-start;
+  padding-left: 10%;
+  /* position:relative; */
 }
-
-.about-hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.about-hero p {
-  max-width: 600px;
-  margin: 20px auto 0;
-  font-size: 1.2rem;
-  
-}
-
-/* IMAGE */
-.hero-image {
-  width: 100%;
+.lux-overlay{
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding:20px 40px;
+  text-align:left;
+  margin-right: auto;
   max-width: 900px;
-  margin: 40px auto ;
-  display: block;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  color:white;
+  border-radius:20px;
+}
+@media (max-width: 768px) {
+  .lux-hero{
+    padding-left: 6%;
+    height: 70vh;
+  }
+  .lux-overlay h1 {
+    font-size: 34px;
+  }
 }
 
-
-.about-media .icon:hover {
-  transform: scale(1.2) translateY(-5px);
-}
-
-
-.btn-about {
-  background: linear-gradient(90deg, #56ab2f, #a8e6cf);
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 8px;
-  text-decoration: none;
+.lux-overlay h1{
+ font-size: 44px;
+  line-height: 1.3;
   font-weight: 600;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.5);
+
+}
+.lux-overlay p{
+  text-shadow: none;
+  opacity: 0.92;
 }
 
-.btn-about:hover {
-  background-color: #214d3a;
-  transform: translateY(-3px);
+/* STORY */
+
+.about-story{
+  padding:100px 10%;
 }
 
-.split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.story-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.story-img img{
+  border-radius:18px;
+  padding-top: 80px;
+}
+
+.story-text p{
+  margin-top:15px;
+  color:#555;
+  line-height:1.7;
+}
+
+/* DARK VISION */
+
+.vision-dark{
+  background: linear-gradient(180deg, #0f766e, #134d3d); /* أخضر داكن متدرج */
+  color:white;
+  text-align:center;
+  padding:100px 20px;
+}
+
+.vision-dark p{
+  max-width:600px;
+  margin:auto;
+  opacity:0.8;
+}
+
+/* STATS */
+
+.stats{
+  padding:80px 10%;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  text-align:center;
+  gap:40px;
+}
+
+.stats h3{
+  font-size:40px;
+  color:#31694e;
+}
+
+/* GLASS CTA */
+
+.glass-cta {
+  padding: 110px 10px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 60px;
+  background: linear-gradient(
+    180deg,
+    #0a3b33,
+    #041f1a
+  );
 }
 
-.split img {
+.cta-logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+.glass-box {
+  max-width: 620px;
   width: 100%;
-  border-radius: 20px;
-}
-
-@media (max-width: 768px) {
-  .split {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* SECTIONS */
-.about-section {
-  margin: 100px auto;
   text-align: center;
-  max-width: 800px;
-  background:linear-gradient(135deg, #68db8e, #ffffff);
-  border-radius: 25px;
-  padding:50px 30px ;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  padding: 0; /* مهم */
 }
 
-.about-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 25px;
-    color: #1f3d2e;
-
+.glass-box h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 18px;
+  letter-spacing: -0.4px;
 }
 
-.about-text {
-  font-size: 1.15rem;
-  color: #555;
-  line-height: 1.8;
+.glass-box p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 520px;
+  margin: 0 auto 42px;
+  line-height: 1.6;
+}
+.glass-box .b-book {
+  padding: 14px 36px;
+  text-decoration: none;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(100deg, var(--brand-300), var(--brand-900));
+  color: #0a3b33;
+  box-shadow: 0 20px 40px rgba(20, 184, 166, 0.35);
+
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-/* APPROACH */
-.about-approach {
-  margin-top: 35px;
-  font-size: 1.35rem;
-  font-weight: 600;
-  line-height: 1.9;
+.glass-box button:hover {
+  box-shadow: 0 30px 60px rgba(20, 184, 166, 0.45);
+  transform: translateY(-1px);
+}
+.cta-email {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 56px;
+}
+ .cta-email span{
+  display: block;
+    margin-bottom: 12px;
+    color:aliceblue;
+    font-weight: 400;
+
+ }
+.cta-email a {
+  color: rgb(254, 249, 249);
+  text-decoration: none;
+  font-size: 15px;
 }
 
-.about-approach p {
-  margin: 12px 0;
-}
-
-/* CLOSING */
-.about-closing {
-  margin: 120px auto 20px;
-  padding:50px 30px ;
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1f3d2e;
-  border-radius: 20px;
-  background:linear-gradient(135deg, #68db8e, #f8fff8);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-
-}
-
-/* ANIMATION */
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-}
-
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .about-hero h1 {
-    font-size: 2.4rem;
-  }
-
-  .about-section {
-    margin: 70px auto;
-    padding: 40px 20px;
-  }
+.cta-email a:hover {
+  text-decoration: underline;
 }

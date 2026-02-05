@@ -1,6 +1,12 @@
-"use client";
+
+// Assignment: Dynamic Server-Side Rendering
+// Date: 2 Feb 2026
+
+
 import "./service.css";
 import Image from "next/image";
+
+export const dynamic = "force-dynamic"; // 👈 يثبت إنها SSR
 
 const services = [
   {
@@ -39,7 +45,10 @@ export default function Services() {
   return (
     <section className="services">
       <h1>Our Services</h1>
-      <p>We help businesses manage customers, track sales, and improve performance efficiently.</p>
+      <p>
+        We help businesses manage customers, track sales,
+        and improve performance efficiently.
+      </p>
 
       <div className="service-cards">
         {services.map((service, idx) => (
@@ -52,7 +61,9 @@ export default function Services() {
             />
             <h3>{service.title}</h3>
             <p>{service.desc}</p>
-            <a href={service.link} className="btn">Learn More</a>
+            <a href={service.link} className="btn">
+              Learn More
+            </a>
           </div>
         ))}
       </div>

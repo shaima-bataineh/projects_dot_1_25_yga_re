@@ -1,21 +1,20 @@
-// HHHHHHHomme
+// app/page.jsx (Home)
 import "./css/home.css";
 import Hero from "@/components/home/Hero";
 import Features from "@/components/home/Features";
 import HowWorks from "@/components/home/HowWorks";
 import CTA from "@/components/home/CTA";
 
-
-const steps = [
-  { id: 1, title: "Add Leads" },
-  { id: 2, title: "Manage Deals" },
-  { id: 3, title: "Close Sales" },
+const stepsData = [
+  { id: 1, title: "Add Clients", description: "Add your clients easily with custom fields." },
+  { id: 2, title: "Track Interactions", description: "Monitor every interaction with clients." },
+  { id: 3, title: "Analyze Performance", description: "View analytics and reports to improve sales." },
+  { id: 4, title: "Grow Efficiently", description: "Automate tasks and focus on growth." }
 ];
 
-export default async function Home() {
-
+export default function Home() {
   return (
-    <div className="main-container">
+    <main className="main-container">
 
       <section className="section section-home">
         <Hero />
@@ -26,13 +25,13 @@ export default async function Home() {
       </section>
 
       <section className="section section-process">
-        <HowWorks steps={steps}/>
+        <HowWorks steps={stepsData} />
       </section>
 
       <section className="section section-cta">
         <CTA />
       </section>
 
-    </div>
+    </main>
   );
 }

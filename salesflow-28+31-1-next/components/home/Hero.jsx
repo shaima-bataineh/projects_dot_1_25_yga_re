@@ -1,31 +1,33 @@
 "use client";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="hero">
-    
-
+    <div className="hero">
       <div className="hero-content">
+
         <span className="hero-badge">⚡ Simple CRM for Sales Teams</span>
 
         <h1 className="hero-title">
-          Take Control of Your Sales
+          Take Control of Your <br />
+          <span className="highlight">Sales Process</span>
         </h1>
 
         <p className="hero-tagline">
-          Built for growing businesses that want control over sales — without ERP complexity.
+          Manage customers, track deals, and grow revenue — all from one simple platform.
         </p>
 
-        <p className="hero-description">
-         Manage customers, track deals, and monitor sales performance from one simple dashboard.
+        <div className="hero-actions">
+          <Link href="/login" className="btn-primary">
+            Get Started Free
+          </Link>
+          <button className="btn-secondary">Request Demo</button>
+        </div>
 
+        <p className="hero-trust">
+          No credit card required • Free 14-day trial
         </p>
-          <button className="btn-primary">Start Free Trial</button>
-
-        </div>
-        <div className="hero-visual">
-          <img src="./kpi.jpg" alt="salesflow dashboard"/>
-        </div>
-    </section>
+      </div>
+    </div>
   );
 }

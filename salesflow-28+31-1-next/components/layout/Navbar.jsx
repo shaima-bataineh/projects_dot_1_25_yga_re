@@ -7,8 +7,6 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [active,setActive] = useState("");
-
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -90,7 +88,7 @@ export default function Navbar() {
             </li>
 
             <li className="nav-item ms-lg-3">
-              <a className="btn btn-accent cta-btn" href="#">
+              <a className="cta-btn" href="#">
                 Get Started
               </a>
             </li>

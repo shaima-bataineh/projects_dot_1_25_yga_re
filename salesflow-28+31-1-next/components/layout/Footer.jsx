@@ -1,11 +1,13 @@
 "use client";
-import "./Footer.css";
+ import "./footer.css";
 import Backtotop from "@/components/common/Backtotop";
+
+// استيراد أيقونات من react-icons
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
+
 export default function Footer() {
-  
   return (
     <footer className="footer">
-      
       <div className="footer-container">
         {/* قسم نبذة */}
         <div className="footer-about">
@@ -15,7 +17,7 @@ export default function Footer() {
 
         {/* قسم الروابط */}
         <div className="footer-links">
-          <Backtotop/>
+          
           <h4>Quick Links</h4>
           <ul>
             <li><a href="/">Home</a></li>
@@ -29,9 +31,10 @@ export default function Footer() {
         <div className="footer-social">
           <h4>Follow Us</h4>
           <div className="social-icons">
-            <a href="#"><i className="fab fa-facebook-f"></i></a>
-            <a href="#"><i className="fab fa-twitter"></i></a>
-            <a href="#"><i className="fab fa-linkedin-in"></i></a>
+            <a href="#"><FaFacebookF /></a>
+            <a href="#"><FaTwitter /></a>
+            <a href="#"><FaLinkedinIn /></a>
+            <a href="mailto:info@salesflow.com"><FaEnvelope /></a>
           </div>
         </div>
       </div>
@@ -43,4 +46,3 @@ export default function Footer() {
     </footer>
   );
 }
-
