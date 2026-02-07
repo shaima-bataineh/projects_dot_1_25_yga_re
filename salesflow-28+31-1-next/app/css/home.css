@@ -43,7 +43,7 @@ background: linear-gradient(
     rgba(11, 46, 38, 0.08),
     transparent
   ); 
-  color: var(--white);
+  color: var(--gray-700);
   position: relative;
 }
 
@@ -58,8 +58,6 @@ background: linear-gradient(
   );
   pointer-events: none;
 }
-
-
 
 /* Badge */
 .hero-badge {
@@ -97,6 +95,12 @@ background: linear-gradient(
   color: transparent;
   -webkit-text-fill-color: transparent; /* Safari fix */
 }
+
+.highlight {
+  color: #2f855a; /* لون جذاب يتماشى مع تصميمك */
+  font-weight: bold;
+}
+
 /* Subtitle */
 .hero-tagline {
   font-size: 1.25rem;

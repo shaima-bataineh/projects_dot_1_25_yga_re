@@ -2,6 +2,9 @@
 import Link from "next/link";
 
 export default function Hero() {
+
+    console.log("ENV DESC:", process.env.NEXT_PUBLIC_APP_DESCRIPTION);
+
   return (
     <div className="hero">
       <div className="hero-content">
@@ -12,10 +15,14 @@ export default function Hero() {
           Take Control of Your <br />
           <span className="highlight">Sales Process</span>
         </h1>
-
         <p className="hero-tagline">
-          Manage customers, track deals, and grow revenue — all from one simple platform.
+        Manage customers, track deals, and grow revenue — all from one simple platform.
         </p>
+         {/* <p>{process.env.NEXT_PUBLIC_APP_DESCRIPTION}</p> */}
+         <p className="hero-description">
+             Your all-in-one <span className="highlight">CRM</span> to track leads, close deals faster, 
+          and grow your <span className="highlight">business efficiently</span>.
+         </p>
 
         <div className="hero-actions">
           <Link href="/login" className="btn-primary">
