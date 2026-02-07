@@ -1,3 +1,6 @@
+// this code is the main page of the app it contains links to the api routes and the products page to show how to use the api routes in the frontend and how to navigate(links) between pages in next.js.
+
+
 import Link from "next/link";
 
 export default function HomePage() {

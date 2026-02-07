@@ -1,3 +1,5 @@
+// 
+
 import style from "./page.module.css";
 
 async function getproduct() {

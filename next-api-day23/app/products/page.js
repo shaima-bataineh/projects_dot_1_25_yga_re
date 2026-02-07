@@ -1,3 +1,5 @@
+// this is frontend code runing on the client this code send to client or visible to user.
+
 import { getProducts } from "@/lib/ProductStore";
 
 export default function ProductsPage() {

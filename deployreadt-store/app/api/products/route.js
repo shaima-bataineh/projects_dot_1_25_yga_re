@@ -1,3 +1,6 @@
+//هاد باك اند بسيط مافي jsx جهزنا البيانات كانها داتا بيز ورجعناها json 
+
+
 export async function GET(request) {
     const limit = Number(process.env.LIMIT || 12);
 
