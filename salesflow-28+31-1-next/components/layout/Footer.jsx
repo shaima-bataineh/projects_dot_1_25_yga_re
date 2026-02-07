@@ -1,5 +1,5 @@
 "use client";
- import "./footer.css";
+ import "./Footer.css";
 import Backtotop from "@/components/common/Backtotop";
 
 // استيراد أيقونات من react-icons
