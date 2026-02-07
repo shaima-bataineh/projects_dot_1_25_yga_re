@@ -24,44 +24,42 @@ html, body {
 }
 
 body {
-  padding-top: 80px; /* ارتفاع الناف */
   font-family: 'Inter', sans-serif;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 /* ===== HERO ===== */
 
 .hero {
-  min-height: 100vh ; /* نخصم ارتفاع الناف */
+  min-height: 100vh; /* 100vh مطروح منها ارتفاع Navbar */
+  padding-top: 120px; /* نفس ارتفاع Navbar */
   display: flex;
- align-items: flex-start;
-  padding: 0 24px; 
-  padding-top: clamp(70px, 8vh, 120px);
-  margin: 0;            
+    padding-bottom: 60px;           /* خففها لو كبيرة */
+
+  align-items: center;
+  justify-content: center;
   text-align: center;
+background: linear-gradient(
+    180deg,
+    rgba(11, 46, 38, 0.08),
+    transparent
+  ); 
+  color: var(--white);
   position: relative;
-  background: linear-gradient(
-    135deg,
-    var(--gray-100),
-    var(--white)
-  );
 }
 
-.hero::before {
+.hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(
-      circle at top center,
-      rgba(20, 184, 166, 0.12),
-      transparent 60%
-    );
+  background: linear-gradient(
+    to bottom,
+    rgba(2,6,23,0.25),  /* شفاف داكن أعلى الهيرو */
+    rgba(2,6,23,0)       /* شفاف للمنتصف والأسفل */
+  );
   pointer-events: none;
 }
-.hero-content {
-  max-width: 850px;
-  margin: 0 auto;
-}
+
+
 
 /* Badge */
 .hero-badge {
