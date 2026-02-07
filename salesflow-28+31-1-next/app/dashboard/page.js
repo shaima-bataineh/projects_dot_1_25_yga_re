@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./dashboard.css";
+
 
 // هذا يخلي الصفحة SSR
 export const dynamic = "force-dynamic";
