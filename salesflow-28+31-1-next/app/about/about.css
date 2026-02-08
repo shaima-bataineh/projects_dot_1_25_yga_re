@@ -95,6 +95,33 @@
   line-height:1.7;
 }
 
+@media (max-width: 768px) {
+
+  .about-story {
+    padding: 60px 1rem; /* أقل وأنعم */
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr; /* عمود واحد */
+    gap: 32px;
+    text-align: center;
+  }
+
+  .story-img img {
+    padding-top: 0; /* نلغيها على الموبايل */
+  }
+
+  .story-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .story-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+
 /* DARK VISION */
 
 .vision-dark{
