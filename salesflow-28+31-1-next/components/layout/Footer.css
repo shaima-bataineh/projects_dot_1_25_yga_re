@@ -1,11 +1,14 @@
 /* فوترررررر*/
 .footer {
-  background-color: var(--brand-700);
+  background: linear-gradient(
+    180deg,
+    #0f766e,
+    #0a3b33
+  );
   color: #fff;
   padding: 4rem 1rem 2rem; /* زودت الـ padding من 3rem إلى 4rem */
   font-family: 'Inter', sans-serif;
 }
-
 
 .footer-container {
   display: grid;
@@ -15,9 +18,8 @@
   margin: 0 auto;
 }
 
-
 .footer h3 {
-color:#ecf2ef;
+  color: #ffffff;
 text-align: center;
 align-items: center;
 padding:0;
@@ -25,15 +27,13 @@ display: block;
 margin: 0 0 1rem;
 margin-bottom: 1rem;
 }
-
-
  .footer h4 {
   margin-bottom: 1rem;
 }
 
 .footer p {
   line-height: 1.6;
-  color: #ccc;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-links ul {
@@ -46,7 +46,7 @@ margin-bottom: 1rem;
 }
 
 .footer-links a {
-  color: #ccc;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -63,7 +63,7 @@ margin-bottom: 1rem;
 }
 
 .footer-social .social-icons a:hover {
-  color: #00ff80;
+  color: #6cc297;
 }
 
 .footer-bottom {

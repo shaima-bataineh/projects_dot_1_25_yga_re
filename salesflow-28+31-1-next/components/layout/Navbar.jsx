@@ -10,24 +10,24 @@ export default function Navbar() {
 
   const isHome = pathname === "/";
   const isTransparentPage =
-    pathname === "/about" || pathname === "/contact";
+    pathname === "/about" || pathname === "/contact" || pathname === "/services";
 
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
+ // useEffect(() => {
     // scroll فقط للـ Home
-    if (!isHome) {
-      setScrolled(false);
-      return;
-    }
+   // if (!isHome) {
+    //  setScrolled(false);
+    //  return;
+   // }
 
-    const onScroll = () => {
-      setScrolled(window.scrollY > 60);
-    };
+    // const onScroll = () => {
+      // setScrolled(window.scrollY > 60);
+    // };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isHome]);
+    // window.addEventListener("scroll", onScroll, { passive: true });
+    // return () => window.removeEventListener("scroll", onScroll);
+ // }, []);
 
   return (
     <nav
