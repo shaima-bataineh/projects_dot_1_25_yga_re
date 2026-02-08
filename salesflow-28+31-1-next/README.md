@@ -20,7 +20,7 @@ A simple sales management website that demonstrates:
 ## Deployment
 The project is deployed on Vercel:
 
- https://projects-dot-1-25-yga-re.vercel.app/
+https://salesflow-yga.vercel.app/
 
 ## Assignment
 deploy my project on vercel 
