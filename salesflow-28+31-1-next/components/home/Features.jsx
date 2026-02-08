@@ -55,7 +55,7 @@ export default function Features() {
               src={service.image}
               alt={service.title}
               fill
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "cover" }}
             />
           </div>
 
