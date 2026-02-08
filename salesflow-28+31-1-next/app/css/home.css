@@ -232,18 +232,17 @@ background: linear-gradient(
 }
 
 .feature-image {
- flex: 0 0 42%;     /* بدل width */
-  max-width: 480px;  /* يمنعها تكبر كثير */
-  height: 260px;     /* أصغر وأنعم */
-  position: relative;
+  width: 100%;
+  max-width: 480px;
 }
 
-.feature-image img {
-  width: 100% !important;   /* مهم نجبر الصورة تاخد كامل الحاوية */
-  height: 100% !important;
-  object-fit: cover;
+.feature-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   border-radius: 12px;
 }
+
 .feature-text {
   flex: 1;
   max-width: 520px;

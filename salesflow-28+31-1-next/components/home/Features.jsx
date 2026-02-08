@@ -54,8 +54,9 @@ export default function Features() {
             <Image
               src={service.image}
               alt={service.title}
-              fill
-              style={{ objectFit: "cover" }}
+              width={400}
+              height={260}
+              className="feature-img"
             />
           </div>
 
