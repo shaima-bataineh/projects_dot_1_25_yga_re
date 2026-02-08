@@ -176,7 +176,6 @@ background: linear-gradient(
 .features-section {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
   padding: 4rem 0rem;
 }
 
