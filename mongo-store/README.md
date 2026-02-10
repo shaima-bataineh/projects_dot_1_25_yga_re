@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# project overview
 
-## Getting Started
+This project is a backend API built using Next.js App Router, MongoDB, and Mongoose.
+The project demonstrates how to build a real-world backend system with database integration, including CRUD operations and API route structure.
 
-First, run the development server:
+# features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-Connect Next.js with MongoDB database.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-Create RESTful API routs.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-Implement CRUD operations (Create, Read, Update, Delete).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-Use Mongoose for schema validation and data modeling.
 
-## Learn More
+-Handle errors and validation response.
 
-To learn more about Next.js, take a look at the following resources:
+# tichnical used 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js
+- Mongo DB
+- Mongoose
+- Postman (testing api)
+- Node.js
